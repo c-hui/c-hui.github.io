@@ -27,7 +27,7 @@
 <meta property="og:site_name" content="逆旅">
 <meta property="og:description" content="动态规划问题的一般形式就是求最值。通过 「状态转移方程」，得到相互独立的子问题，通过求解子问题最值得到原问题的最值。而动态规划问题一定会具备 「最优子结构」，才能通过子问题的最值得到原问题的最值。 要得到 「最优子结构」，需要对子问题穷举。如果暴力穷举的话效率会极其低下，所以需要「备忘录」或者「DP table」来优化穷举过程，避免重复计算 「重叠子问题」。 写状态转移方程方法： 明确 base">
 <meta property="article:published_time" content="2020-12-20T12:25:58.000Z">
-<meta property="article:modified_time" content="2020-12-22T14:52:10.693Z">
+<meta property="article:modified_time" content="2020-12-22T14:55:56.528Z">
 <meta property="article:author" content="石春晖">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="面试">
@@ -185,7 +185,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-22 22:52:10" itemprop="dateModified" datetime="2020-12-22T22:52:10+08:00">2020-12-22</time>
+                <time title="Modified: 2020-12-22 22:55:56" itemprop="dateModified" datetime="2020-12-22T22:55:56+08:00">2020-12-22</time>
               </span>
 
           
@@ -242,8 +242,8 @@
 <p>dp 数组的定义：当目标金额为 i 时，至少需要 dp[i] 枚硬币凑出。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">coinChange</span><span class="params">(coins: List[int], amount: int)</span> -&gt; int:</span></span><br><span class="line">    // 数组大小为 amount + <span class="number">1</span>，初始值也为 amount + <span class="number">1</span></span><br><span class="line">    dp = [amount + <span class="number">1</span>] * [amount + <span class="number">1</span>]</span><br><span class="line">    // base case</span><br><span class="line">    dp[<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">    // 外层 <span class="keyword">for</span> 循环在遍历所有状态的所有取值</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(dp)):</span><br><span class="line">        // 内层 <span class="keyword">for</span> 循环在求所有选择的最小值</span><br><span class="line">        <span class="keyword">for</span> coin <span class="keyword">in</span> coins:</span><br><span class="line">            // 子问题无解，跳过</span><br><span class="line">            <span class="keyword">if</span> (i - coin &lt; <span class="number">0</span>): <span class="keyword">continue</span></span><br><span class="line">            dp[i] = min(dp[i], <span class="number">1</span> + dp[i - coin]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dp[amount] <span class="keyword">if</span> dp[amount] != amount + <span class="number">1</span> <span class="keyword">else</span> <span class="number">-1</span></span><br></pre></td></tr></table></figure>
 <hr />
-<p>文章转载自labuladong的算法小抄(<a href="https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie/dong-tai-gui-hua-xiang-jie-jin-jie" target="_blank" rel="noopener">https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie/dong-tai-gui-hua-xiang-jie-jin-jie</a>)，欢迎大家支持原作者。</p>
-<p>记笔记的目的是为了加深理解，以及以后方便查阅。</p>
+<p>文章转载自<a href="https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie/dong-tai-gui-hua-xiang-jie-jin-jie" target="_blank" rel="noopener">labuladong的算法小抄</a>，欢迎大家支持原作者。</p>
+<p>记笔记的目的是为了加深理解，以及方便以后查阅。</p>
 
     </div>
 
